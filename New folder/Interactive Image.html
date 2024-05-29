@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image</title>
+    <link rel="stylesheet" href="styles.css"> <!-- ربط ملف CSS -->
+</head>
+<body>
+    <div class="container">
+        <img src="network-diagram.jpg" alt="Interactive Image" class="image" onerror="handleImageError()">
+        <!-- Define hover-area zones according to the image -->
+        <div class="hover-area" style="top: 20px; left: 250px; width: 100px; height: 50px;" 
+             onmouseover="showTooltip(event, 'Detail: Cable Migration 7%')" onmouseout="hideTooltip()"></div>
+        <div class="hover-area" style="top: 10px; left: 350px; width: 100px; height: 50px;" 
+             onmouseover="showTooltip(event, 'Detail: Nearest Exchange Changed 5%')" onmouseout="hideTooltip()"></div>
+        <div class="hover-area" style="top: 150px; left: 100px; width: 100px; height: 50px;" 
+             onmouseover="showTooltip(event, 'Detail: Cable Cut 14%')" onmouseout="hideTooltip()"></div>
+        <div class="hover-area" style="top: 120px; left: 450px; width: 100px; height: 50px;" 
+             onmouseover="showTooltip(event, 'Detail: Patch Cord Issue 5%')" onmouseout="hideTooltip()"></div>
+        <div class="hover-area" style="top: 390px; left: 450px; width: 100px; height: 50px;" 
+             onmouseover="showTooltip(event, 'Detail: High Power 12%')" onmouseout="hideTooltip()"></div>
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <script>
+        function showTooltip(event, text) {
+            var tooltip = document.getElementById('tooltip');
+            tooltip.style.display = 'block';
+            tooltip.style.left = event.pageX + 'px';
+            tooltip.style.top = event.pageY + 'px';
+            tooltip.innerHTML = text;
+        }
+
+        function hideTooltip() {
+            var tooltip = document.getElementById('tooltip');
+            tooltip.style.display = 'none';
+        }
+
+        function handleImageError() {
+            alert('Image not found or path is incorrect.');
+        }
+    </script>
+</body>
+</html>

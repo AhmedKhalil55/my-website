@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Adjust as needed */
+    margin: auto;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.hover-area {
+    position: absolute;
+    cursor: pointer;
+    /* Remove background color and border for final version */
+    background-color: transparent; /* Ensure no background */
+    border: none; /* Ensure no border */
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    z-index: 10;
+    max-width: 200px; /* Adjust as needed */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
